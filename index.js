@@ -15,12 +15,12 @@ async function main() {
   movimientos = 0;
   puntaje1 = 0;
   puntaje2 = 0;
-  start = false;
+  interval = null;
+
 
   function keypress(e) {
-    if (!start) {
-      setInterval(moverPersonaje2, 200);
-      start = true;
+    if (!interval) {
+      interval = setInterval(moverPersonaje2, 200);
     }
 
     accion = null;
@@ -90,16 +90,26 @@ async function main() {
       el_cel_sig.appendChild(el_personaje);
     }
 
+    if (win.includes(el_cel_actual.id)) {
+      alert(`${nombre} gana!`);
+      reset();
+    }
+
     if (sig != el_cel_actual.id) {
       el_cel_sig = document.getElementById(sig);
       el_cel_sig.appendChild(el_personaje);
     }
+  }
 
-    if (win.includes(sig)) {
-      alert(`${nombre} gana!`);
-      el_cel_sig = document.getElementById('0');
-      el_cel_sig.appendChild(el_personaje);
-    }
+  function reset(){
+    puntaje1 = 0;
+    puntaje2 = 0;
+    el_personaje1 = document.getElementById('personaje');
+    el_personaje2 = document.getElementById('personaje2');
+    el_cel_sig = document.getElementById('0');
+    el_cel_sig.appendChild(el_personaje1, el_personaje2);
+    clearInterval(interval)
+    interval=null
   }
 }
 
