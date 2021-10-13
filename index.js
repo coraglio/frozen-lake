@@ -63,8 +63,7 @@ async function main() {
     el_cel_actual = el_personaje.parentElement;
     sig = getEstadoSiguiente(el_cel_actual.id, accion);
     puntaje1 += R[sig];
-    el_puntaje = document.getElementById('puntaje1');
-    el_puntaje.innerText = puntaje1;
+    updatePuntaje();
 
     mover('Usted', el_personaje, sig);
   }
@@ -75,8 +74,7 @@ async function main() {
     accion = p_optima[el_cel_actual.id];
     sig = getEstadoSiguiente(el_cel_actual.id, accion);
     puntaje2 += R[sig];
-    el_puntaje = document.getElementById('puntaje2');
-    el_puntaje.innerText = puntaje2;
+    updatePuntaje();
 
     mover('Bot', el_personaje, sig);
   }
@@ -104,12 +102,23 @@ async function main() {
   function reset(){
     puntaje1 = 0;
     puntaje2 = 0;
+    updatePuntaje();
+
     el_personaje1 = document.getElementById('personaje');
     el_personaje2 = document.getElementById('personaje2');
     el_cel_sig = document.getElementById('0');
-    el_cel_sig.appendChild(el_personaje1, el_personaje2);
+    el_cel_sig.appendChild(el_personaje1);
+    el_cel_sig.appendChild(el_personaje2);
     clearInterval(interval)
     interval=null
+  }
+
+  function updatePuntaje(){
+    el_puntaje = document.getElementById('puntaje1');
+    el_puntaje.innerText = puntaje1;
+
+    el_puntaje = document.getElementById('puntaje2');
+    el_puntaje.innerText = puntaje2;
   }
 }
 
