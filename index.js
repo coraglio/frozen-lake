@@ -90,7 +90,7 @@ async function main() {
       el_cel_sig.appendChild(el_personaje);
     }
 
-    if (win.includes(el_cel_actual.id)) {
+    if (win.includes(parseInt(el_cel_actual.id))) {
       alert(`${nombre} gana!`);
       reset();
     }
