@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frozen Lake</title>
+
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="index.css" />
+
+    <script src="https://requirejs.org/docs/release/2.3.6/minified/require.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="puntajes">
+      <p>
+        <span>Usted:</span>
+        <span id="puntaje1">0</span>
+      </p>
+
+      <p class="color-2">
+        <span>Bot:</span>
+        <span id="puntaje2">0</span>
+      </p>
+    </div>
+
+    <div class="tablero">
+      <div id="0" class="cell start">
+        <div id="personaje" class="personaje">
+          <i class="bi bi-bug-fill"></i>
+        </div>
+        <div id="personaje2" class="personaje color-2">
+          <i class="bi bi-bug-fill"></i>
+        </div>
+      </div>
+      <div id="1" class="cell"></div>
+      <div id="2" class="cell"></div>
+      <div id="3" class="cell"></div>
+      <div id="4" class="cell"></div>
+      <div id="5" class="cell hueco"></div>
+      <div id="6" class="cell"></div>
+      <div id="7" class="cell hueco"></div>
+      <div id="8" class="cell"></div>
+      <div id="9" class="cell"></div>
+      <div id="10" class="cell"></div>
+      <div id="11" class="cell hueco"></div>
+      <div id="12" class="cell hueco"></div>
+      <div id="13" class="cell"></div>
+      <div id="14" class="cell"></div>
+      <div id="15" class="cell end"></div>
+    </div>
+
+  </body>
+</html>
