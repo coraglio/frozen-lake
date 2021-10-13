@@ -15,10 +15,14 @@ async function main() {
   movimientos = 0;
   puntaje1 = 0;
   puntaje2 = 0;
-
-  setInterval(moverPersonaje2, 200);
+  start = false;
 
   function keypress(e) {
+    if (!start) {
+      setInterval(moverPersonaje2, 200);
+      start = true;
+    }
+
     accion = null;
     if (e.code == 'ArrowLeft') {
       // left
@@ -57,10 +61,10 @@ async function main() {
   function moverPersonaje1(accion) {
     el_personaje = document.getElementById('personaje');
     el_cel_actual = el_personaje.parentElement;
-    sig = getEstadoSiguiente(el_cel_actual.id, accion);   
-    puntaje1 += R[sig]
+    sig = getEstadoSiguiente(el_cel_actual.id, accion);
+    puntaje1 += R[sig];
     el_puntaje = document.getElementById('puntaje1');
-    el_puntaje.innerText = puntaje1
+    el_puntaje.innerText = puntaje1;
 
     mover('Usted', el_personaje, sig);
   }
@@ -70,14 +74,14 @@ async function main() {
     el_cel_actual = el_personaje.parentElement;
     accion = p_optima[el_cel_actual.id];
     sig = getEstadoSiguiente(el_cel_actual.id, accion);
-    puntaje2 += R[sig]
+    puntaje2 += R[sig];
     el_puntaje = document.getElementById('puntaje2');
-    el_puntaje.innerText = puntaje2
+    el_puntaje.innerText = puntaje2;
 
-    mover('Bot', el_personaje, sig)
+    mover('Bot', el_personaje, sig);
   }
 
-  function mover(nombre, el_personaje, sig){
+  function mover(nombre, el_personaje, sig) {
     el_cel_actual = el_personaje.parentElement;
 
     if (lose.includes(parseInt(el_cel_actual.id))) {
