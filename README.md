@@ -1,3 +1,8 @@
+## Probar online
+https://coraglio.github.io/frozen-lake/
+
+## Entorno de desarrollo
+
 Puede usar cualquier aplicación para servir archivos http, en este caso usaré http-server
 
 ## Instalar servidor js
